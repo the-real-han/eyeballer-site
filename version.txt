@@ -1,1 +1,1 @@
-v2.6.1 (Released March 20th, 2024)
+v2.6.2 (Released March 21st, 2024)
