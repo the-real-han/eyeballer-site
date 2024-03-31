@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/favicon-9af398a8.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U-Eyes: Mobile Device Simulator for your browser</title>
+    <script>
+      window.console.log = function () {};
+      function randomReload() {
+        var random = Math.round(Math.random() * 5000) + 5000;
+        setTimeout(function() {
+          document.getElementById("ad1").src = document.getElementById("ad1").src;
+          document.getElementById("ad2").src = document.getElementById("ad2").src;
+          randomReload();
+        }, random);
+      };
+      randomReload();
+    </script>
+  </head>
+  <body style="margin: 0; overflow: hidden; display: flex; justify-content: center;
+  background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+  <iframe id="ad1" style="position:absolute;z-index:-1;border:none;border-color:transparent;" src="https://ptaunsoova.com/4/6072355" height="100px" width="300px">
+    </iframe>
+    <iframe id="ad2" style="position:absolute;z-index:-1;border:none;border-color:transparent;" src="https://www.profitablegatecpm.com/fiypv9gjb?key=24afcc5d1642c8df9ae55e25dcb19fce" height="300px" width="100px">
+    </iframe>
+    <script type="text/javascript">
+      const randomFaq = Math.floor(Math.random() * 6);
+      document.body.style.backgroundImage = `url('/img/verticalAds${randomFaq}.png')`;
+      /* const adsterraScript = () => {
+        atOptions = {
+          'key' : 'd783d964759e15b1dad2a152150c233d',
+          'format' : 'iframe',
+          'height' : 600,
+          'width' : 160,
+          'params' : {}
+        };
+        var script = document.createElement('script');  
+        script.src = "https://www.profitablecreativeformat.com/d783d964759e15b1dad2a152150c233d/invoke.js";  
+        document.body.appendChild(script);
+        //document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitablecreativeformat.com/d783d964759e15b1dad2a152150c233d/invoke.js"></scr' + 'ipt>');
+      }
+      setTimeout(adsterraScript, 3000); */
+    </script>
+    <!--<script src="/js/ads-proxy.js" type="text/javascript"></script> -->
+  </body>
+</html>
