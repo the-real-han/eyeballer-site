@@ -5,13 +5,25 @@
     <link rel="icon" type="image/png" href="/assets/favicon-9af398a8.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>U-Eyes: Mobile Device Simulator for your browser</title>
+    <script>
+      window.console.log = function () {};
+      function randomReload() {
+        var random = Math.round(Math.random() * 300000) + 30000;
+        setTimeout(function() {
+          document.getElementById("ad1").src = document.getElementById("ad1").src;
+          document.getElementById("ad2").src = document.getElementById("ad2").src;
+          randomReload();
+        }, random);
+      };
+      randomReload();
+    </script>
   </head>
   <body style="margin: 0; overflow: hidden; display: flex; justify-content: center;
   background-image: url('/img/horizontalAds.png'); background-repeat: no-repeat; background-attachment: fixed; background-position: top center;">
-  <!--<iframe style="position:absolute;z-index:-1;border:none;" src="https://ptaunsoova.com/4/6072355" height="1px" width="1px">
+  <iframe  id="ad1" style="position:absolute;z-index:-1;border:none;border-color:transparent;" src="https://lushaseex.com/4/6072355" height="1px" width="1px">
   </iframe>
-  <iframe style="position:absolute;z-index:-1;border:none;" src="https://www.profitablegatecpm.com/fiypv9gjb?key=24afcc5d1642c8df9ae55e25dcb19fce" height="1px" width="1px">
-  </iframe>-->
+  <iframe  id="ad2" style="position:absolute;z-index:-1;border:none;border-color:transparent;" src="https://www.profitablegatecpm.com/fiypv9gjb?key=24afcc5d1642c8df9ae55e25dcb19fce" height="1px" width="1px">
+  </iframe>
     <!-- <script type="text/javascript">
       const adsterraScript = () => {
         atOptions = {
@@ -28,7 +40,7 @@
       }
       setTimeout(adsterraScript, 1000);
       //adsterraScript();
-    </script>
-    <script src="/js/ads-proxy.js" type="text/javascript"></script> -->
+    </script>-->
+    <script src="/js/ads-proxy.js" type="text/javascript"></script> 
   </body>
 </html>
