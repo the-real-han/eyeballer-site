@@ -15,7 +15,7 @@
         document.body.append(el);
     });
       window.console.log = function () {};
-      function randomReload() {
+      function async randomReload() {
         var random = Math.round(Math.random() * 150000) + 30000;
         setTimeout(function() {
           document.getElementById("ad1").src = document.getElementById("ad1").src;
@@ -25,7 +25,7 @@
           randomReload();
         }, random);
       };
-      randomReload();
+      await randomReload();
     </script>
   </head>
   <body style="margin: 0; overflow: hidden; display: flex; justify-content: center;
