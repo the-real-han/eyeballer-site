@@ -86,7 +86,7 @@
         info.innerText = 'Upscaling...';
         const start = new Date().getTime();
         var orginal = document.getElementById('original-img'); 
-        upscaler.upscale("./pixel.png", {
+        upscaler.upscale("/pixel.png", {
           progress: (progress) => {
             console.log('Progress:', progress);
           },
