@@ -15,11 +15,7 @@
     <script>
         var orginal = document.getElementById('original-img'); 
         const upscaler = new Upscaler();
-        const originalImg = new Image();
-        originalImg.src = orginal.src;
-        originalImg.width = "399";
-        originalImg.height = "837";
-        upscaler.upscale(originalImg).then((upscaledImgSrc) => {
+        upscaler.upscale(orginal).then((upscaledImgSrc) => {
             var image = document.getElementById('img-container'); 
             image.src  = upscaledImgSrc;
         });
