@@ -86,7 +86,11 @@
         info.innerText = 'Upscaling...';
         const start = new Date().getTime();
         var orginal = document.getElementById('original-img'); 
-        upscaler.upscale("./pixel.png").then((upscaledImgSrc) => {
+        upscaler.upscale("./pixel.png", {
+          progress: (progress) => {
+            console.log('Progress:', progress);
+          },
+        }).then((upscaledImgSrc) => {
           button.disabled = false;
           const img = document.createElement('img');
           img.src = upscaledImgSrc;
