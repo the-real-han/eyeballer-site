@@ -87,11 +87,7 @@
         info.innerText = 'Upscaling...';
         const start = new Date().getTime();
         var orginal = document.getElementById('original-img'); 
-        const originalImg = new Image();
-        originalImg.src = orginal.src;
-        originalImg.width = "399";
-        originalImg.height = "837";
-        upscaler.upscale(originalImg).then((upscaledImgSrc) => {
+        upscaler.upscale(orginal).then((upscaledImgSrc) => {
           button.disabled = false;
           const img = document.createElement('img');
           img.src = upscaledImgSrc;
