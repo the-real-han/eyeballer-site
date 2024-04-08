@@ -87,6 +87,8 @@
         const start = new Date().getTime();
         var orginal = document.getElementById('original-img'); 
         upscaler.upscale("/pixel.png", {
+          patchSize: 64,
+  padding: 2,
           progress: (progress) => {
             console.log('Progress:', progress);
           },
