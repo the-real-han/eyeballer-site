@@ -17,11 +17,10 @@
       const img = document.getElementById('original-img');
       const indicator = document.getElementById('indicator');
       const link = document.createElement('a');
-      const upscaler = new Upscaler({
-        model: ESRGANMedium2x,
-      });
-
       img.onload = async () => {
+        const upscaler = new Upscaler({
+          model: ESRGANMedium2x,
+        });
         const filename = img.alt;
         const start = new Date().getTime();
         const pixels = tf.browser.fromPixels(img);
@@ -46,6 +45,7 @@
           link.click();
           document.body.removeChild(link);
           URL.revokeObjectURL(link.href);
+          upscaler.dispose();
         });
       };
     </script>
