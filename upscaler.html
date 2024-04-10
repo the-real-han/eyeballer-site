@@ -10,6 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@upscalerjs/esrgan-medium@latest/dist/umd/2x.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/upscaler@latest/dist/browser/umd/upscaler.min.js"></script>
     <script>
+      window.addEventListener('message', (event) => {
+        console.log(event);
+        img.src = base64;
+      });
       const img = document.getElementById('original-img');
       const indicator = document.getElementById('indicator');
       const link = document.createElement('a');
@@ -44,10 +48,6 @@
           URL.revokeObjectURL(link.href);
         });
       };
-      window.addEventListener('message', function(base64) {
-        console.log(base64);
-        img.src = base64;
-      });
     </script>
   </body>
 </html>
