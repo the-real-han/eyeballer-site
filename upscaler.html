@@ -3,16 +3,14 @@
     <title>U-Eyes: Mobile Device Simulator for your browser</title>
   </head>
   <body>
-    <div id="indicator">Enhancing...</div>
+    <div id="indicator">Processing...</div>
     <img id="original-img" style="display:none;" src=""/>
           
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@upscalerjs/esrgan-medium@latest/dist/umd/2x.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/upscaler@latest/dist/browser/umd/upscaler.min.js"></script>
     <script>
-      console.log("loaded");
       window.addEventListener('message', (event) => {
-        console.log(event);
         img.src = event.data.base64;
         img.alt = event.data.filename;
       });
@@ -24,7 +22,6 @@
       });
 
       img.onload = async () => {
-        console.log("img loaded");
         const filename = img.alt;
         const start = new Date().getTime();
         const pixels = tf.browser.fromPixels(img);
@@ -37,10 +34,11 @@
           progress: (progress) => {
             const ms = new Date().getTime() - start;
             const eta = Math.round((ms / progress) * (1 - progress) / 1000);
-            indicator.innerHTML = 'ETA ' + eta + "s";
+            indicator.innerHTML = 'Ready in ' + eta + 's';
           },
         }).then((upscaledImgSrc) => {
           //download img
+          indicator.innerHTML = 'Finished';
           link.href = upscaledImgSrc;//previewImgRaw[0];
           link.download = filename;
           link.style.display = 'none';
