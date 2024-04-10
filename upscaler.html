@@ -17,8 +17,8 @@
         indicator.style.color = event.data.txtColor;
         indicator.innerHTML = "Processing...";
         indicator.style.display = "visible";
-        img.src = event.data.base64;
         img.alt = event.data.filename;
+        img.src = event.data.base64;
       });
       const link = document.createElement('a');
       const upscaler = new Upscaler({
