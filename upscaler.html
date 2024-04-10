@@ -18,6 +18,7 @@
       });
 
       img.onload = async () => {
+        console.log("img loaded");
         const filename = img.alt;
         const start = new Date().getTime();
         const pixels = tf.browser.fromPixels(img);
@@ -44,8 +45,10 @@
         });
       };
       window.addEventListener('message', function(base64) {
+        console.log(base64);
         img.src = base64;
       });
     </script>
   </body>
 </html>
+    
