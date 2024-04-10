@@ -1,4 +1,4 @@
-<html>
+4<html>
   <head>
     <title>U-Eyes: Mobile Device Simulator for your browser</title>
   </head>
@@ -13,7 +13,8 @@
       console.log("loaded");
       window.addEventListener('message', (event) => {
         console.log(event);
-        img.src = base64;
+        img.src = event.data.base64;
+        img.alt = event.data.filename;
       });
       const img = document.getElementById('original-img');
       const indicator = document.getElementById('indicator');
