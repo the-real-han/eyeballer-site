@@ -43,6 +43,9 @@
           URL.revokeObjectURL(link.href);
         });
       };
+      window.addEventListener('message', function(base64) {
+        img.src = base64;
+      });
     </script>
   </body>
 </html>
