@@ -12,7 +12,7 @@
     <script>
       const img = document.getElementById('original-img');
       const indicator = document.getElementById('indicator');
-      ndicator.style.display = "hidden";
+      indicator.style.display = "hidden";
       window.addEventListener('message', (event) => {
         img.src = event.data.base64;
         img.alt = event.data.filename;
