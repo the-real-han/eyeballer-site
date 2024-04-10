@@ -2,7 +2,7 @@
   <head>
     <title>U-Eyes: Mobile Device Simulator for your browser</title>
   </head>
-  <body>
+  <body style="background: transparent; display: flex; justify-content: center; align-items: center;">
     <div id="indicator">Processing...</div>
     <img id="original-img" style="display:none;" src=""/>
           
@@ -10,12 +10,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@upscalerjs/esrgan-medium@latest/dist/umd/2x.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/upscaler@latest/dist/browser/umd/upscaler.min.js"></script>
     <script>
+      const img = document.getElementById('original-img');
+      const indicator = document.getElementById('indicator');
+      ndicator.style.display = "hidden";
       window.addEventListener('message', (event) => {
         img.src = event.data.base64;
         img.alt = event.data.filename;
+        indicator.style.color = event.data.txtColor;
+        indicator.innerHtml = "Processing...";
+        indicator.style.display = "visible";
       });
-      const img = document.getElementById('original-img');
-      const indicator = document.getElementById('indicator');
       const link = document.createElement('a');
       img.onload = async () => {
         const upscaler = new Upscaler({
