@@ -14,17 +14,17 @@
       const indicator = document.getElementById('indicator');
       indicator.style.display = "hidden";
       window.addEventListener('message', (event) => {
+        indicator.style.color = event.data.txtColor;
+        indicator.innerHTML = "Processing...";
+        indicator.style.display = "visible";
         img.src = event.data.base64;
         img.alt = event.data.filename;
-        indicator.style.color = event.data.txtColor;
-        indicator.innerHtml = "Processing...";
-        indicator.style.display = "visible";
       });
       const link = document.createElement('a');
-      img.onload = async () => {
-        const upscaler = new Upscaler({
+      const upscaler = new Upscaler({
           model: ESRGANMedium2x,
         });
+      img.onload = async () => {
         const filename = img.alt;
         const start = new Date().getTime();
         const pixels = tf.browser.fromPixels(img);
@@ -49,7 +49,6 @@
           link.click();
           document.body.removeChild(link);
           URL.revokeObjectURL(link.href);
-          upscaler.dispose();
         });
       };
     </script>
