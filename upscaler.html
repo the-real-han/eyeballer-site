@@ -37,11 +37,14 @@
           progress: (progress) => {
             const ms = new Date().getTime() - start;
             const eta = Math.round((ms / progress) * (1 - progress) / 1000);
+            if (eta < 2) {
+              indicator.innerHTML = 'Download is starting...';
+            }
             indicator.innerHTML = 'Ready in ' + eta + 's';
           },
         }).then((upscaledImgSrc) => {
           //download img
-          indicator.innerHTML = 'Download Started';
+          indicator.innerHTML = 'Download started!';
           link.href = upscaledImgSrc;//previewImgRaw[0];
           link.download = filename;
           link.style.display = 'none';
