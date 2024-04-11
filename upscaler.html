@@ -39,8 +39,9 @@
             const eta = Math.round((ms / progress) * (1 - progress) / 1000);
             if (eta < 2) {
               indicator.innerHTML = 'Download is starting...';
+            } else {
+              indicator.innerHTML = 'Ready in ' + eta + 's';
             }
-            indicator.innerHTML = 'Ready in ' + eta + 's';
           },
         }).then((upscaledImgSrc) => {
           //download img
