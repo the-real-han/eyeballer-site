@@ -28,7 +28,16 @@
     </script>
   </head>
   <body style="margin: 0; overflow: hidden; display: flex; justify-content: center;
-  background-image: url('/img/horizontalAds.png'); background-repeat: no-repeat; background-attachment: fixed; background-position: top center;">
+  background-repeat: no-repeat; background-attachment: fixed; background-position: top center; height:100vh;">
+  <script type="text/javascript">
+    const randomFaq = Math.floor(Math.random() * 2);
+    document.body.style.backgroundImage = `url('/img/horizontal${randomFaq}.png')`;
+    url = ["https://eyeballer.dev/milestone-reward", "https://eyeballer.dev/robinhood-reward"]
+    function clickBody() {
+      window.open(url[randomFaq], "_blank");
+    }
+    document.body.addEventListener("click", clickBody);
+  </script>
    <!--<iframe  id="ad1" style="position:absolute;z-index:-1;border:none;border-color:transparent;" src="https://lushaseex.com/4/6072355" height="1px" width="1px">
   </iframe>
   <iframe  id="ad2" style="position:absolute;z-index:-1;border:none;border-color:transparent;" src="https://www.profitablegatecpm.com/fiypv9gjb?key=24afcc5d1642c8df9ae55e25dcb19fce" height="1px" width="1px">

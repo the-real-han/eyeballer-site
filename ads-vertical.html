@@ -28,18 +28,19 @@
     </script>
   </head>
   <body style="margin: 0; overflow: hidden; display: flex; justify-content: center;
-  background-repeat: no-repeat; background-attachment: fixed; background-position: center; height:100vh;">
+  background-repeat: no-repeat; background-attachment: fixed; background-position: top center; height:100vh;">
   <!--<iframe id="ad1" style="position:absolute;z-index:-1;border:none;border-color:transparent;" src="https://lushaseex.com/4/6072355" height="1px" width="1px">
     </iframe>
     <iframe id="ad2" style="position:absolute;z-index:-1;border:none;border-color:transparent;" src="https://www.profitablegatecpm.com/fiypv9gjb?key=24afcc5d1642c8df9ae55e25dcb19fce" height="1px" width="1px">
     </iframe> -->
     <script type="text/javascript">
-      const randomFaq = Math.floor(Math.random() * 6);
-      document.body.style.backgroundImage = `url('/img/verticalAds${randomFaq}.png')`;
+      const randomFaq = Math.floor(Math.random() * 2);
+      document.body.style.backgroundImage = `url('/img/vertical${randomFaq}.png')`;
+      url = ["https://eyeballer.dev/milestone-reward", "https://eyeballer.dev/robinhood-reward"]
       function clickBody() {
-        window.open("https://eyeballer.dev/review-reward", "_blank");
+        window.open(url[randomFaq], "_blank");
       }
-      document.body.addEventListener("click", clickBody)
+      document.body.addEventListener("click", clickBody);
       /* const adsterraScript = () => {
         atOptions = {
           'key' : 'd783d964759e15b1dad2a152150c233d',
