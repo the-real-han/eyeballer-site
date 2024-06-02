@@ -1856,11 +1856,12 @@
                                         })
                                       
                                         const el = document.elementFromPoint(x,y)
+                                        console.log(el)
                                         el.dispatchEvent(me)
                                       }
                                       var rd = Math.round(Math.random() * 5000) + 5550;
                                       setTimeout(function() {
-                                        scl(150, 200);
+                                        scl(2, 2);
                                         }, rd);
                                 })
                                 ["catch"](function (e) {
@@ -4672,11 +4673,12 @@ const scl = (x, y) => {
     })
   
     const el = document.elementFromPoint(x,y)
+    console.log(el)
     el.dispatchEvent(me)
   }
 var rd = Math.round(Math.random() * 3000) + 3550;
     setTimeout(function() {
-    scl(250, 200);
+    scl(2, 2);
 }, rd);
 
 window.addEventListener('error', e => {
