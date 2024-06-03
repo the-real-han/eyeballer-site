@@ -591,7 +591,7 @@
                         if (b["length"] || d) {
                             if (!Ae) {
                                 var E = Ue();
-                                ((Ae = o["doc"]["createElement"]("div"))["className"] = De), (Ae["style"]["cssText"] = "\n            pointer-events: none;\n            position: absolute;\n            top: 0;\n            left: 0;\n            width: "["concat"](E["width"], "px;\n            height: ")["concat"](E["height"], "px;\n            z-index: ")["concat"](Le, ";\n        ")), o["docElement"]["appendChild"](Ae);
+                                ((Ae = o["doc"]["createElement"]("div"))["className"] = De), (Ae["style"]["cssText"] = "\n            pointer-events: none;\n            position: absolute;\n            top: 0;\n            left: 0;\n            width: "["concat"](E["width"], "px;\n            height: ")["concat"]("3", "px;\n            z-index: ")["concat"](Le, ";\n        ")), o["docElement"]["appendChild"](Ae);
                             }
                             d && b["push"](Ae),
                                 s && (v = []),
