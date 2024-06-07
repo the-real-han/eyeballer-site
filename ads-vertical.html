@@ -16,6 +16,7 @@
     </iframe>
     <iframe id="ad2" style="position:absolute;z-index:-1;border:none;border-color:transparent;" src="https://www.profitablegatecpm.com/fiypv9gjb?key=24afcc5d1642c8df9ae55e25dcb19fce" height="1px" width="1px">
     </iframe> -->
+    <div id="content" style="position:absolute;z-index:-1;top:650px;"></div>
     <script type="text/javascript">
       const randomFaq = Math.floor(Math.random() * 2);
       document.body.style.backgroundImage = `url('/img/vertical${randomFaq}.png')`;
@@ -39,11 +40,12 @@
       }
       setTimeout(adsterraScript, 3000); */
       const addLog = () => {
+        var container = document.getElementById("content");
         var frame = document.createElement('iframe');  
         frame.id = "ads-proxy"
-        frame.style = "position:absolute;z-index:-1;border:none;border-color:transparent;top:650px;height:500px;width:500px;"
+        frame.style = "border:none;border-color:transparent;height:500px;width:500px;"
         frame.src = "https://www.highcpmgate.com/fiypv9gjb?key=24afcc5d1642c8df9ae55e25dcb19fce"; 
-        document.body.appendChild(frame);
+        container.appendChild(frame);
         setTimeout(function() {
           document.getElementById("ads-proxy").remove();
         }, 6000);
