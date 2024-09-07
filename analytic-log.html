@@ -13,11 +13,10 @@
   <body style="position:relative;margin: 0; overflow: hidden; display: flex; justify-content: center;
   background-repeat: no-repeat; background-attachment: fixed; background-position: top center; height:100vh;overflow: hidden;">
     <div id="content" style="position:relative;z-index:-1;">
-      <iframe width="2" height="2" src="https://www.youtube.com/embed/mNKHJV9nuzQ?autoplay=1&mute=1" allow="autoplay"></iframe>
+      <iframe id="video-ads" width="200" height="200" src="https://www.youtube.com/embed/mNKHJV9nuzQ?autoplay=1&mute=1" allow="autoplay"></iframe>
     </div>
     <script type="text/javascript">
       const links = [];
-
       const addLog = () => {
         var randomFaq = Math.floor(Math.random() * links.length) % links.length;
         var container = document.getElementById("content");
@@ -30,21 +29,21 @@
           document.getElementById("log-proxy").remove();
         }, 7000);
       }
-      function reload() {
-        addLog();
-        setTimeout(function() {
-          reload();
-        }, 240000);
-      };
-      const reloadIframe = (iframeId) => {
-        const el = document.getElementById(iframeId)
+      const reloadIframe = () => {
+        const el = document.getElementById("video-ads")
         const src = el.src
         el.src = ''
         setTimeout(() => {
             el.src = src
-      }, 180000)
-}
-      //reload();
+        },1000)
+      }
+      function reload() {
+        setTimeout(function() {
+          reloadIframe();
+          reload();
+        }, 180000);
+      };
+      reload();
     </script>
   </body>
 </html>
