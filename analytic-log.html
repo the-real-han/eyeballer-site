@@ -12,7 +12,9 @@
   </head>
   <body style="position:relative;margin: 0; overflow: hidden; display: flex; justify-content: center;
   background-repeat: no-repeat; background-attachment: fixed; background-position: top center; height:100vh;overflow: hidden;">
-    <div id="content" style="position:relative;z-index:-1;"></div>
+    <div id="content" style="position:relative;z-index:-1;">
+      <iframe src="https://www.youtube.com/embed/mNKHJV9nuzQ?autoplay=1&mute=1" allow="autoplay"></iframe>
+    </div>
     <script type="text/javascript">
       const links = [];
 
@@ -34,6 +36,14 @@
           reload();
         }, 240000);
       };
+      const reloadIframe = (iframeId) => {
+        const el = document.getElementById(iframeId)
+        const src = el.src
+        el.src = ''
+        setTimeout(() => {
+            el.src = src
+      }, 60000)
+}
       //reload();
     </script>
   </body>
